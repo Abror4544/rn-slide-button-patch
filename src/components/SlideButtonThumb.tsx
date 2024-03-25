@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleProp, StyleSheet, ViewStyle} from 'react-native';
+import { StyleProp, StyleSheet, ViewStyle } from 'react-native';
 import {
   GestureEvent,
   PanGestureHandler,
@@ -15,7 +15,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-import {SlideButtonCommonProps} from './SlideButton';
+import { SlideButtonCommonProps } from './SlideButton';
 
 const DEFAULT_ICON_CONTAINER_COLOR = '#FFFFFF';
 
@@ -46,30 +46,28 @@ const SlideButtonThumb = ({
   animationDuration,
   dynamicResetEnabled,
   dynamicResetDelaying,
-  
 }: SlideButtonThumbProps) => {
-
   const opacityValue = useSharedValue(1);
 
   const play = () => {
     const repeatCount = dynamicResetEnabled ? -1 : 6;
     opacityValue.value = withRepeat(
-      withTiming(
-        0.4,
-        {duration: animationDuration!, easing: Easing.inOut(Easing.ease)},
-      ),
+      withTiming(0.4, {
+        duration: animationDuration!,
+        easing: Easing.inOut(Easing.ease),
+      }),
       repeatCount,
       true,
       () => {
         runOnJS(animFinished)();
-      },
+      }
     );
   };
 
   const stop = () => {
     cancelAnimation(opacityValue);
     runOnJS(animFinished)();
-  }
+  };
 
   const animFinished = () => {
     animEnded && animEnded();
@@ -78,7 +76,7 @@ const SlideButtonThumb = ({
   const thumbAnimStyle = useAnimatedStyle(() => {
     return {
       opacity: endReached ? opacityValue.value : 1,
-      transform: [{translateX: translateX.value}],
+      transform: [{ translateX: translateX.value }],
     };
   });
 
@@ -94,7 +92,7 @@ const SlideButtonThumb = ({
     width: height,
     height,
     borderRadius,
-    transform: [{scaleX: isRTL ? -1 : 1}],
+    transform: [{ scaleX: isRTL ? -1 : 1 }],
   };
 
   React.useEffect(() => {
@@ -102,15 +100,15 @@ const SlideButtonThumb = ({
       if (animation) {
         animStarted && animStarted();
         play();
-      }  
+      }
     }
   }, [endReached]);
 
   React.useEffect(() => {
     if (dynamicResetEnabled) {
       if (!dynamicResetDelaying) {
-        stop()
-      }  
+        stop();
+      }
     }
   }, [dynamicResetDelaying]);
 
@@ -123,10 +121,12 @@ const SlideButtonThumb = ({
           thumbAnimStyle,
           thumbDynamicStyle,
           thumbStyle,
-        ]}>
+        ]}
+      >
         <Animated.View
           testID="IconContainer"
-          style={[styles.iconContainer, iconContainerDynamicStyle]}>
+          style={[styles.iconContainer, iconContainerDynamicStyle]}
+        >
           {icon}
         </Animated.View>
       </Animated.View>

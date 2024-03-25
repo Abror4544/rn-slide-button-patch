@@ -6,15 +6,25 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import Animated, { Extrapolate, interpolate, useAnimatedStyle } from 'react-native-reanimated';
+import Animated, {
+  Extrapolate,
+  interpolate,
+  useAnimatedStyle,
+} from 'react-native-reanimated';
 
 import { SlideButtonCommonProps } from './SlideButton';
 
 const DEFAULT_TEXT_COLOR = '#FAFAFA';
 
 export interface SlideButtonTextProps
-  extends Omit<SlideButtonCommonProps, 
-  'autoReset' | 'autoResetDelay' | 'animation'| 'animationDuration' | 'endReached'> {
+  extends Omit<
+    SlideButtonCommonProps,
+    | 'autoReset'
+    | 'autoResetDelay'
+    | 'animation'
+    | 'animationDuration'
+    | 'endReached'
+  > {
   title: string;
   titleStyle?: StyleProp<TextStyle>;
   titleContainerStyle?: StyleProp<ViewStyle>;
@@ -28,7 +38,7 @@ const SlideButtonText = ({
   borderRadius,
   padding,
   translateX,
-  scrollDistance
+  scrollDistance,
 }: SlideButtonTextProps) => {
   const textAnimStyle = useAnimatedStyle(() => {
     return {
@@ -36,14 +46,18 @@ const SlideButtonText = ({
         translateX.value,
         [0, scrollDistance],
         [0.99, 0],
-        Extrapolate.CLAMP,
+        Extrapolate.CLAMP
       ),
     };
-  })
+  });
   return (
     <View
       testID="TitleContainer"
-      style={[styles.titleContainer, { height, margin: padding, borderRadius }, titleContainerStyle]}
+      style={[
+        styles.titleContainer,
+        { height, margin: padding, borderRadius },
+        titleContainerStyle,
+      ]}
     >
       <Animated.Text
         testID="Title"

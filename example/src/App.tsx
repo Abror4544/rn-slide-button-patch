@@ -58,9 +58,7 @@ export default function App() {
       </View>
       <View style={styles.container}>
         <Text>Default:</Text>
-        <SlideButton
-          title="Slide To Unlock"
-        />
+        <SlideButton title="Slide To Unlock" />
         <Text>Disabled:</Text>
         <SlideButton
           disabled

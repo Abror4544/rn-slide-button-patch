@@ -1,2 +1,2 @@
-import SlideButton from '../src/components/SlideButton'
-export default SlideButton
+import SlideButton from './components/SlideButton';
+export default SlideButton;
