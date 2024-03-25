@@ -1,6 +1,6 @@
 {
   "name": "rn-slide-button-patch",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple slide button using Reanimated 2 animation library. Patch from rn-slide-button",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

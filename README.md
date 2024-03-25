@@ -1,6 +1,6 @@
 # React Native Slide Button
 
-A simple slide button using Reanimated 2 animation library.
+A simple slide button using Reanimated 2 animation library. Forked from original & fixed some bugs.
 
 ## Preview
 
