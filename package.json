@@ -1,7 +1,7 @@
 {
-  "name": "rn-slide-button",
-  "version": "1.0.3",
-  "description": "A simple slide button using Reanimated 2 animation library.",
+  "name": "rn-slide-button-patch",
+  "version": "1.0.4",
+  "description": "A simple slide button using Reanimated 2 animation library. Patch from rn-slide-button",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -53,13 +53,13 @@
     "slide",
     "swipe"
   ],
-  "repository": "https://github.com/r3tr0c0d3r/rn-slide-button",
-  "author": "Saleh Imran <mdsalehimran@gmail.com> (https://github.com/r3tr0c0d3r)",
+  "repository": "https://github.com/Abror4544/rn-slide-button-patch",
+  "author": "Abror <corporationsystems7@gmail.com> (https://github.com/Abror4544)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/r3tr0c0d3r/rn-slide-button/issues"
+    "url": "https://github.com/Abror4544/rn-slide-button-patch/issues"
   },
-  "homepage": "https://github.com/r3tr0c0d3r/rn-slide-button#readme",
+  "homepage": "https://github.com/Abror4544/rn-slide-button-patch#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
