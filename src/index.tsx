@@ -1,2 +1,3 @@
 import SlideButton from './components/SlideButton';
-export default SlideButton;
+import { SlideButtonProps } from './components/SlideButton';
+export { SlideButton, SlideButtonProps };

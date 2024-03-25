@@ -48,7 +48,7 @@ export type SlideButtonPropsExtends = Omit<
     'translateX' | 'scrollDistance' | 'endReached' | 'isRTL'
   >;
 
-interface SlideButtonProps extends SlideButtonPropsExtends {
+export interface SlideButtonProps extends SlideButtonPropsExtends {
   width?: number;
   disabled?: boolean;
   completeThreshold?: number;
